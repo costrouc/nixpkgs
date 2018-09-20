@@ -1,5 +1,5 @@
 { lib
-, fetchPypi
+, fetchPypi, fetchurl
 , buildPythonPackage
 , pymatgen
 , marshmallow
@@ -21,12 +21,12 @@
 
 buildPythonPackage rec {
   pname = "dftfit";
-  version = "0.4.22";
+  version = "ab21a94e8dc9a23e469e9bc5afef9b416a48a236";
   disabled = (!isPy3k);
 
-  src = fetchPypi {
-     inherit pname version;
-     sha256 = "06dbdc21cf9ed199bfceae5301172bee2164a3b9ef6f0814a089530c320ebb3a";
+  src = fetchurl {
+    url = "https://gitlab.com/costrouc/dftfit/-/archive/${version}/dftfit-${version}.tar.gz";
+    sha256 = "09zr81nl9rrvh2j6qz26cbd8dqcv0652yzc7b274dv02gxyx857d";
   };
 
   buildInputs = [ pytestrunner ];
