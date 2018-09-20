@@ -17,12 +17,12 @@
 
 buildPythonPackage rec {
   pname = "lammps-cython";
-  version = "0.5.7";
+  version = "0.5.8";
   disabled = (!isPy3k);
 
   src = fetchurl {
      url = "https://gitlab.com/costrouc/${pname}/-/archive/v${version}/${pname}-v${version}.tar.gz";
-     sha256 = "1wj9scmjdl00af13b5ihfccrjpikrdgkzd88ialam1nkxvxi42bl";
+     sha256 = "015p4rwfkwnqs835g385nvhnd2k2qkcdw5zz6wnq6i806fn99sff";
   };
 
   buildInputs = [ cython pytestrunner ];
