@@ -21,12 +21,12 @@
 
 buildPythonPackage rec {
   pname = "dftfit";
-  version = "d167bf99e6191123b79fd30ea79116eadbea6c2b";
+  version = "230b3aad98e047b124691b49513dd7a9576afb2a";
   disabled = (!isPy3k);
 
   src = fetchurl {
     url = "https://gitlab.com/costrouc/dftfit/-/archive/${version}/dftfit-${version}.tar.gz";
-    sha256 = "13rp0s983mwbvjibvhjyh8v1nlq64k9ylb0vv443529j221wd2yl";
+    sha256 = "13chncgqq6g2456pfbnycikvg3jga3ii6sd9h4glrp04pdy158jm";
   };
 
   buildInputs = [ pytestrunner ];
