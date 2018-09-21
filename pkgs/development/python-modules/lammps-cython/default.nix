@@ -8,6 +8,7 @@
 , cython
 , pymatgen
 , ase
+, gsd
 , pytestrunner
 , pytest
 , pytestcov
@@ -17,17 +18,17 @@
 
 buildPythonPackage rec {
   pname = "lammps-cython";
-  version = "f40ec131a853d824d5c829b689baf5ddddd7057e";
+  version = "127be95aec2b6e55fcb6ab2a205e323309210974";
   disabled = (!isPy3k);
 
   src = fetchurl {
-    url = "https://gitlab.com/costrouc/lammps-cython/-/archive/f40ec131a853d824d5c829b689baf5ddddd7057e/lammps-cython-f40ec131a853d824d5c829b689baf5ddddd7057e.tar.gz";
-    sha256 = "17av27lq2p8nxfbx8blaq3vbr4bjm66h40awi43z8p6qlf307igq";
+    url = "https://gitlab.com/costrouc/lammps-cython/-/archive/127be95aec2b6e55fcb6ab2a205e323309210974/lammps-cython-127be95aec2b6e55fcb6ab2a205e323309210974.tar.gz";
+    sha256 = "1zzayb9794mvakj0zd7h5ki0nkq7dia71dw2ww2sdfwk3adk0d6d";
   };
 
   buildInputs = [ cython pytestrunner ];
   checkInputs = [ pytest pytestcov openssh ];
-  propagatedBuildInputs = [ mpi4py pymatgen ase numpy ];
+  propagatedBuildInputs = [ mpi4py numpy pymatgen ase gsd ];
 
   preBuild = ''
     echo "Creating lammps.cfg file..."
