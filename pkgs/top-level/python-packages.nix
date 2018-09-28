@@ -380,6 +380,18 @@ in {
 
   outcome = callPackage ../development/python-modules/outcome {};
 
+  ovito = callPackage ../applications/science/chemistry/ovito {
+    libav = pkgs.libav;
+    netcdf = pkgs.netcdf;
+    qscintilla = pkgs.qscintilla;
+    zlib = pkgs.zlib;
+    boost = pkgs.boost;
+    git = pkgs.git;
+    fftw = pkgs.fftw;
+    hdf5 = pkgs.hdf5;
+    libssh = pkgs.libssh;
+  };
+
   palettable = callPackage ../development/python-modules/palettable { };
 
   pathlib = callPackage ../development/python-modules/pathlib { };
