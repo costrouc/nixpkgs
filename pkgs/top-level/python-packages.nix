@@ -2714,7 +2714,7 @@ in {
 
   filelock = callPackage ../development/python-modules/filelock {};
 
-  fiona = callPackage ../development/python-modules/fiona { gdal = pkgs.gdal; };
+  fiona = callPackage ../development/python-modules/fiona { gdal_2 = pkgs.gdal_2; };
 
   fitbit = callPackage ../development/python-modules/fitbit { };
 
@@ -3833,6 +3833,8 @@ in {
 
   pika-pool = callPackage ../development/python-modules/pika-pool { };
 
+  kmapper = callPackage ../development/python-modules/kmapper { };
+
   kmsxx = (callPackage ../development/libraries/kmsxx {
     inherit (pkgs.kmsxx) stdenv;
     inherit (pkgs) pkgconfig;
@@ -4032,11 +4034,7 @@ in {
 
   pyotp = callPackage ../development/python-modules/pyotp { };
 
-  pyproj = callPackage ../development/python-modules/pyproj {
-    # pyproj does *work* if you want to use a system supplied proj, but with the current version(s) the tests fail by
-    # a few decimal places, so caveat emptor.
-    proj = null;
-  };
+  pyproj = callPackage ../development/python-modules/pyproj { };
 
   pyqrcode = callPackage ../development/python-modules/pyqrcode { };
 
@@ -4240,7 +4238,9 @@ in {
 
   rabbitpy = callPackage ../development/python-modules/rabbitpy { };
 
-  rasterio = callPackage ../development/python-modules/rasterio { };
+  rasterio = callPackage ../development/python-modules/rasterio {
+    gdal = pkgs.gdal_2; # gdal 3.0 not supported yet
+  };
 
   radicale_infcloud = callPackage ../development/python-modules/radicale_infcloud {};
 
@@ -4323,6 +4323,8 @@ in {
   rivet = disabledIf isPy3k (toPythonModule (pkgs.rivet.override {
     python2 = python;
   }));
+
+  ripser = callPackage ../development/python-modules/ripser { };
 
   rjsmin = callPackage ../development/python-modules/rjsmin { };
 
@@ -4445,6 +4447,8 @@ in {
 
   scikit-fmm = callPackage ../development/python-modules/scikit-fmm { };
 
+  scikit-tda = callPackage ../development/python-modules/scikit-tda { };
+
   scp = callPackage ../development/python-modules/scp {};
 
   seaborn = callPackage ../development/python-modules/seaborn { };
@@ -4553,6 +4557,8 @@ in {
 
   tabulate = callPackage ../development/python-modules/tabulate { };
 
+  tadasets = callPackage ../development/python-modules/tadasets { };
+
   tempita = callPackage ../development/python-modules/tempita { };
 
   terminado = callPackage ../development/python-modules/terminado { };
@@ -4611,6 +4617,8 @@ in {
 
   ukpostcodeparser = callPackage ../development/python-modules/ukpostcodeparser { };
 
+  umap-learn = callPackage ../development/python-modules/umap-learn { };
+
   umemcache = callPackage ../development/python-modules/umemcache {};
 
   uritools = callPackage ../development/python-modules/uritools { };
@@ -4640,6 +4648,8 @@ in {
   virtual-display = callPackage ../development/python-modules/virtual-display { };
 
   virtualenv = callPackage ../development/python-modules/virtualenv { };
+
+  vsts = callPackage ../development/python-modules/vsts { };
 
   weasyprint = callPackage ../development/python-modules/weasyprint { };
 
@@ -4710,6 +4720,8 @@ in {
   BTrees = callPackage ../development/python-modules/btrees {};
 
   persistent = callPackage ../development/python-modules/persistent {};
+
+  persim = callPackage ../development/python-modules/persim { };
 
   xdot = callPackage ../development/python-modules/xdot { };
 
@@ -5017,6 +5029,8 @@ in {
   xcaplib = callPackage ../development/python-modules/xcaplib { };
 
   xlib = callPackage ../development/python-modules/xlib { };
+
+  yappi = callPackage ../development/python-modules/yappi { };
 
   zbase32 = callPackage ../development/python-modules/zbase32 { };
 
