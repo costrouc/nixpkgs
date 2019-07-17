@@ -11,6 +11,8 @@
 , mpi4py
 , scikit-fmm
 , isPy27
+, python
+, gmsh
 }:
 
 buildPythonPackage rec {
@@ -32,7 +34,16 @@ buildPythonPackage rec {
     mpi4py
     future
     scikit-fmm
+    gmsh
   ] ++ lib.optionals isPy27 [ pysparse ];
+
+  checkInputs = [
+    gmsh
+  ];
+
+  checkPhase = ''
+    ${python.interpreter} setup.py test --modules
+  '';
 
   meta = with lib; {
     homepage = https://www.ctcms.nist.gov/fipy/;
