@@ -1016,6 +1016,8 @@ in {
 
   pulumi-aws = callPackage ../development/python-modules/pulumi-aws { };
 
+  pulumi-azure = callPackage ../development/python-modules/pulumi-azure { };
+
   pyicloud = callPackage ../development/python-modules/pyicloud { };
 
   pyperf = callPackage ../development/python-modules/pyperf { };
