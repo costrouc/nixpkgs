@@ -1012,6 +1012,8 @@ in {
 
   pushover-complete = callPackage ../development/python-modules/pushover-complete { };
 
+  pulumi = callPackage ../development/python-modules/pulumi { };
+
   pyicloud = callPackage ../development/python-modules/pyicloud { };
 
   pyperf = callPackage ../development/python-modules/pyperf { };
