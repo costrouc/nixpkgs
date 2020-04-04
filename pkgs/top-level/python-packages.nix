@@ -1018,6 +1018,8 @@ in {
 
   pulumi-azure = callPackage ../development/python-modules/pulumi-azure { };
 
+  pulumi-digitalocean = callPackage ../development/python-modules/pulumi-digitalocean { };
+
   pyicloud = callPackage ../development/python-modules/pyicloud { };
 
   pyperf = callPackage ../development/python-modules/pyperf { };
