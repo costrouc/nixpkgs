@@ -1024,6 +1024,8 @@ in {
 
   pulumi-kubernetes = callPackage ../development/python-modules/pulumi-kubernetes { };
 
+  pulumi-random = callPackage ../development/python-modules/pulumi-random { };
+
   pyicloud = callPackage ../development/python-modules/pyicloud { };
 
   pyperf = callPackage ../development/python-modules/pyperf { };
