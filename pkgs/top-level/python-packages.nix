@@ -1022,6 +1022,8 @@ in {
 
   pulumi-gcp = callPackage ../development/python-modules/pulumi-gcp { };
 
+  pulumi-kubernetes = callPackage ../development/python-modules/pulumi-kubernetes { };
+
   pyicloud = callPackage ../development/python-modules/pyicloud { };
 
   pyperf = callPackage ../development/python-modules/pyperf { };
